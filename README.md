@@ -2,7 +2,7 @@
 
 [![Join the chat at https://gitter.im/deviantony/fig-elk](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/deviantony/fig-elk?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-Run the ELK (Elasticseach, Logstash, Kibana) stack with Docker and Docker-compose.
+Run the ELK (Elasticseach, Logstash, Kibana) stack with Docker and Docker-compose. It has Marvel and Shield support.
 
 It will give you the ability to quickly test your logstash filters and check how the data can be processed in Kibana.
 
@@ -54,15 +54,18 @@ Now that the stack is running, you'll want to inject logs in it. The shipped log
 $ nc localhost 5000 < /path/to/logfile.log
 ```
 
-
 ### Playing with the stack
 
 The stack exposes 4 ports on your localhost:
 
 * 5000: Logstash TCP input.
 * 9200: Elasticsearch HTTP (with Marvel plugin accessible via [http://localhost:9200/_plugin/marvel](http://localhost:9200/_plugin/marvel))
+
+> Shield is enabled. Use the following credentials to access Marvel: marvel_admin / marvel
+
 * 5601: Kibana 4 web interface, access it via [http://localhost:5601](http://localhost:5601)
 
+> Shield is enabled. Use the following credentials to access Kibana: kibana_admin / kibana
 
 ### Boot2docker
 
