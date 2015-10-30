@@ -4,6 +4,8 @@
 
 Run the ELK (Elasticseach, Logstash, Kibana) stack with Docker and Docker-compose.
 
+*NOTE*: This stack runs Elasticseach 1.7.x, Logstash 1.5.x and Kibana 4.x !
+
 It will give you the ability to quickly test your logstash filters and check how the data can be processed in Kibana.
 
 Based on the official images:
