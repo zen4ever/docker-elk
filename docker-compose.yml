@@ -4,11 +4,14 @@ elasticsearch:
   ports:
     - "9200:9200"
     - "9300:9300"
+  volumes:
+    - ./elasticsearch/data:/usr/share/elasticsearch/data
 logstash:
   image: logstash:latest
   command: logstash -f /etc/logstash/conf.d/logstash.conf
   volumes:
     - ./logstash/config:/etc/logstash/conf.d
+    - ./logstash/elb-logs:/mnt/elb-logs
   ports:
     - "5000:5000"
   links:
